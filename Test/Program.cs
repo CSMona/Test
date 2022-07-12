@@ -12,17 +12,39 @@ namespace Test
         static void Main(string[] args)
         {
 
-            string[] name = { "mona", "Ali", "sara","Noor" };
-
-            IEnumerable<string> names = name
-                                    .Where(n => n.Contains("a"))
-                                    .OrderBy(n => n.Length)
-                                    .Select(n => n.ToUpper());
-            foreach (var item in names)
+            IEnumerable<char> query = "Not what you might expect";
+            string vowels = "aeiou";
+            foreach (char vowel in vowels)
+                query = query.Where(c => c != vowel);
+           
+           
+            foreach (char item in query)
             {
                 Console.WriteLine(item);
             }
-            
+
+            //string[] name = { "mona", "Ali", "sara", "Noorrrrr" };
+
+            //IEnumerable<string> names =
+            //    from n in name
+            //    where n.Contains("a")
+            //    orderby n.Length
+            //    select n.ToUpper();
+            //foreach (var item in names)
+            //{
+            //    Console.WriteLine(item);
+        }
+
+            //int[] num1 = new int[] { 1,2,5,6,10,12};
+            //int[] num2 = new int[] { 1, 2, 5, 6, 10, 12,1,88 };
+            //IEnumerable<int> numOrder = num1.Intersect(num2);
+            ////Console.WriteLine(numOrder);
+            //foreach (var item in numOrder)
+            //{
+            //    Console.Write(item+" ");
+            //}
+
+
 
             //var regiterUser = new RegisterUser();
             //var emailVerification = new EmailVerification();
@@ -108,4 +130,4 @@ namespace Test
     //        Console.WriteLine("SMS Sent");
     //    }
     //}
-}
+//}
